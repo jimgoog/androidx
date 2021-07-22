@@ -1,0 +1,10 @@
+rootProject.name = "compose-runtime"
+apply from: "../../playground-common/playground-include-settings.gradle"
+setupPlayground(this, "../..")
+
+selectProjectsFromAndroidX({ name ->
+    if (name.startsWith(":compose")) return true
+    return false
+})
+
+
