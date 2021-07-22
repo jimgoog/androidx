@@ -3,7 +3,8 @@ apply from: "../../playground-common/playground-include-settings.gradle"
 setupPlayground(this, "../..")
 
 selectProjectsFromAndroidX({ name ->
-    if (name.startsWith(":compose")) return true
+    if (name.startsWith(":compose:runtime") && name != ":compose:runtime") return true
+    if (isNeededForComposePlayground(name)) return true
     return false
 })
 
