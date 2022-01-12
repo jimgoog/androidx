@@ -63,6 +63,10 @@ def addMavenRepositories(RepositoryHandler handler) {
             artifact()
         }
     }
+    handler.maven {
+        url("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/dev/")
+    }
+
     if (System.getenv("ALLOW_PUBLIC_REPOS") != null || System.getProperty("ALLOW_PUBLIC_REPOS") != null) {
         handler.mavenCentral()
         handler.google()
